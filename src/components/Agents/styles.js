@@ -33,39 +33,64 @@ export const Content = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
 
-    img {
-      width: 250px;
-      height: 300px;
-      margin-top: 30px;
+    .agent {
+      width: 260px;
+      height: 310px;
+      margin-bottom: 30px;
       border: 1px solid #133052;
-      background: linear-gradient(
-        180deg,
-        #26262600 0%,
-        #1a1a1abf 50%,
-        #090909 100%
-      );
+      position: relative;
+      overflow: hidden;
 
       &:hover {
+        border: 1px solid #e13157;
+      }
+
+      p {
+        font-size: 24px;
+        font-style: normal;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        padding-top: 260px;
+        padding-bottom: 20px;
         background: linear-gradient(
           180deg,
           #26262600 0%,
-          #1a1a1abf 50%,
-          #e13157 100%
+          #1a1a1abf 75%,
+          #090909 100%
         );
-        border: 1px solid #e13157;
+
+        &:hover {
+          background: linear-gradient(
+            180deg,
+            #26262600 0%,
+            #1a1a1abf 75%,
+            #e13157 100%
+          );
+        }
+      }
+
+      img {
+        width: 250px;
+        height: 300px;
+        border: 1px solid #133052;
+        margin: 3px;
+        position: absolute;
       }
     }
 
-    div {
+    .see-all {
       width: 250px;
       height: 300px;
-      margin-top: 30px;
       border: 1px solid #e13157;
       display: flex;
       justify-content: center;
       align-items: center;
 
-      .see-all {
+      img {
         width: 25px;
         height: 25px;
         margin: 0;
