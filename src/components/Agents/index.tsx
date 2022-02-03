@@ -34,7 +34,7 @@ const Agents: React.FC = () => {
         closeModal={() => setOpenModalAgents(false)}
         open={openModalAgents}
       />
-      <Content className="content">
+      <Content>
         <h1>Agentes</h1>
 
         <div className="agents">

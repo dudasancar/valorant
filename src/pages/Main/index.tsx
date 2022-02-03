@@ -2,7 +2,9 @@ import React from "react";
 import Header from "../../components/Header";
 import { Container } from "./styles";
 import title from "../../assets/title.png";
+import background from "../../assets/background.png";
 import Agents from "../../components/Agents";
+import Maps from "../../components/Maps";
 
 const Main: React.FC = () => {
   return (
@@ -12,6 +14,7 @@ const Main: React.FC = () => {
         <img src={title} className="title" />
       </div>
       <Agents />
+      <Maps />
     </Container>
   );
 };
