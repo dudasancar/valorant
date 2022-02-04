@@ -3,22 +3,25 @@ import styled from "styled-components";
 export const ContentModal = styled.div`
   background: #fff;
   border-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   width: 1100px;
   height: 700px;
   border: none;
   border-radius: 5px;
-  display: flex;
 
   .close-icon {
+    display: flex;
+    align-self: flex-end;
     cursor: pointer;
+    margin: 5px;
   }
 
   .text {
-    padding: 50px;
-  }
-
-  .img {
-    padding: 50px;
+    display: flex;
+    padding: 30px;
+    padding-bottom: 0;
   }
 
   h4 {

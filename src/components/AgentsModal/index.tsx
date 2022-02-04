@@ -39,19 +39,21 @@ const AgentsModal = ({ closeModal, open }: IProps): React.ReactElement => {
           <ContentModal>
             <CloseIcon className="close-icon" onClick={closeModal} />
             <div className="text">
-              <h4>Função</h4>
-              <h1>Duelista</h1>
-              <p>
-                Representando a Coreia do Sul, sua terra natal, Jett tem um
-                estilo de luta ágil e evasivo que permite que ela assuma riscos
-                como ninguém. Ela corre em meio a qualquer confronto, cortando
-                os inimigos antes mesmo que eles percebam quem ou o que os
-                atingiu.
-              </p>
-              <h4>Habilidades</h4>
-            </div>
-            <div className="img">
-              <img src={jett} />
+              <div>
+                <h4>Função</h4>
+                <h1>Duelista</h1>
+                <p>
+                  Representando a Coreia do Sul, sua terra natal, Jett tem um
+                  estilo de luta ágil e evasivo que permite que ela assuma
+                  riscos como ninguém. Ela corre em meio a qualquer confronto,
+                  cortando os inimigos antes mesmo que eles percebam quem ou o
+                  que os atingiu.
+                </p>
+                <h4>Habilidades</h4>
+              </div>
+              <div>
+                <img src={jett} />
+              </div>
             </div>
           </ContentModal>
         </Modal>
