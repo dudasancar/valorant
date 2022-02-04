@@ -1,12 +1,12 @@
 import React from "react";
 import GlobalStyle from "./globalStyles";
-import Main from "./pages/Main";
+import RoutesValorant from "./routes";
 
 const App = (): React.ReactElement => {
   return (
     <div className="App">
       <GlobalStyle />
-      <Main />
+      <RoutesValorant />
     </div>
   );
 };
