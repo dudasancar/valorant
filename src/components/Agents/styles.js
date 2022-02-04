@@ -40,6 +40,7 @@ export const Content = styled.div`
       border: 1px solid #133052;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
 
       &:hover {
         border: 1px solid #e13157;
@@ -66,8 +67,8 @@ export const Content = styled.div`
         &:hover {
           background: linear-gradient(
             180deg,
-            #26262600 0%,
-            #1a1a1abf 75%,
+            #e1315712 50%,
+            #e1315775 80%,
             #e13157 100%
           );
         }
@@ -89,6 +90,7 @@ export const Content = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
 
       img {
         width: 25px;

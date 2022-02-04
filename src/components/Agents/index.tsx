@@ -14,10 +14,17 @@ import reyna from "../../assets/reyna.png";
 import img from "../../assets/see-all.png";
 import AgentsModal from "../AgentsModal";
 import { getAgents } from "../../services/ListAgents";
+import { useNavigate } from "react-router-dom";
 
 const Agents: React.FC = () => {
   const [openModalAgents, setOpenModalAgents] = useState<boolean>(false);
   const [listAgents, setListAgents] = useState([]);
+  const navigate = useNavigate();
+
+  const toAgents = () => {
+    navigate("/agents");
+  };
+
   useEffect(() => {
     getAgents()
       .then((response: any) => {
@@ -86,7 +93,12 @@ const Agents: React.FC = () => {
           </div>
           {/* </>
           ))} */}
-          <div className="see-all">
+          <div
+            className="see-all"
+            onClick={() => {
+              toAgents();
+            }}
+          >
             <img src={img} />
             <p>ver todos</p>
           </div>
