@@ -40,4 +40,29 @@ export const Content = styled.div`
     margin-top: 30px;
     width: 55%;
   }
+
+  .MuiTabs-flexContainer {
+    margin-left: 50px;
+    img {
+      width: 500px;
+      height: 500px;
+      padding: 15px;
+      border-radius: 5%;
+    }
+  }
+
+  .PrivateTabIndicator-colorSecondary-3 {
+    display: none;
+  }
+
+  span {
+    display: none;
+  }
+
+  p {
+    color: #e13157;
+    font-size: 24px;
+    text-align: end;
+    margin-right: 40px;
+  }
 `;
