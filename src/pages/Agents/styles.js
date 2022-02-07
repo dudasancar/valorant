@@ -112,6 +112,50 @@ export const Content = styled.div`
     text-transform: uppercase;
     font-style: italic;
     font-size: 40px;
-    margin: 70px;
+    margin-left: 70px;
+    margin-top: 70px;
+  }
+
+  .search {
+    background: #fff;
+    width: 310px;
+    height: 53px;
+    border: 1px solid #133052;
+    border-radius: 5px;
+    margin-left: 70px;
+  }
+
+  .filter-box {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+
+    .filter {
+      width: 1400px;
+      border: 1px solid #707070;
+      border-radius: 5px;
+      padding: 10px;
+
+      .title-filter {
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+        margin: 20px;
+      }
+
+      .MuiFormControl-root {
+        background: #fff;
+        width: 350px;
+        margin: 20px;
+        border: 1px solid #133052;
+        border-radius: 5px;
+      }
+
+      .btn-filter {
+        margin: 20px;
+        height: 55px;
+        width: 160px;
+      }
+    }
   }
 `;

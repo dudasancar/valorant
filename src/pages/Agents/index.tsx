@@ -15,10 +15,32 @@ import reyna from "../../assets/reyna.png";
 import add from "../../assets/add.png";
 import AddAgentModal from "../../components/AddAgentModal";
 import AgentsModal from "../../components/AgentsModal";
+import {
+  Button,
+  FormControl,
+  FormHelperText,
+  Input,
+  InputAdornment,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@material-ui/core";
+import { useFormik } from "formik";
+import { initialValues, validationSchema } from "./validation";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Agents: React.FC = () => {
   const [openModalAgents, setOpenModalAgents] = useState<boolean>(false);
   const [openModalAddAgent, setOpenModalAddAgent] = useState<boolean>(false);
+
+  const formik = useFormik({
+    initialValues: initialValues,
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
 
   return (
     <Container>
@@ -33,8 +55,93 @@ const Agents: React.FC = () => {
       <HeaderAgents />
       <Content>
         <h1>Agentes</h1>
-        <div>
-          <h2>Filtrar agentes</h2>
+        <FormControl className="search">
+          <TextField
+            variant="outlined"
+            placeholder="Pesquisar agentes..."
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </FormControl>
+        <div className="filter-box">
+          <div className="filter">
+            <p className="title-filter">Filtrar agentes</p>
+            <form onSubmit={formik.handleSubmit}>
+              <FormControl
+                fullWidth
+                className="function"
+                variant="outlined"
+                error={formik.touched.skills && Boolean(formik.errors.skills)}
+              >
+                <InputLabel id="skills">Selecione uma habilidade</InputLabel>
+                <Select
+                  name="skills"
+                  labelId="skills"
+                  id="skills"
+                  label="Selecione uma habilidade"
+                  value={formik.values.skills}
+                  onChange={formik.handleChange}
+                >
+                  <MenuItem>Arma branca</MenuItem>
+                  <MenuItem>Arma primária</MenuItem>
+                  <MenuItem>Arma secundária</MenuItem>
+                  <MenuItem>Especial</MenuItem>
+                </Select>
+                <FormHelperText>
+                  {formik.touched.skills && formik.errors.skills}
+                </FormHelperText>
+              </FormControl>
+              <FormControl
+                fullWidth
+                className="function"
+                variant="outlined"
+                error={formik.touched.filter && Boolean(formik.errors.filter)}
+              >
+                <InputLabel id="filter">Selecione um filtro</InputLabel>
+                <Select
+                  name="filter"
+                  labelId="filter"
+                  id="filter"
+                  label="Selecione um filtro"
+                  value={formik.values.filter}
+                  onChange={formik.handleChange}
+                >
+                  <MenuItem>Arma branca</MenuItem>
+                  <MenuItem>Arma primária</MenuItem>
+                  <MenuItem>Arma secundária</MenuItem>
+                  <MenuItem>Especial</MenuItem>
+                </Select>
+                <FormHelperText>
+                  {formik.touched.filter && formik.errors.filter}
+                </FormHelperText>
+              </FormControl>
+              <TextField
+                fullWidth
+                id="damage"
+                name="damage"
+                label="Informe o valor do dano"
+                variant="outlined"
+                value={formik.values.damage}
+                onChange={formik.handleChange}
+                className="field3"
+                error={formik.touched.damage && Boolean(formik.errors.damage)}
+                helperText={formik.touched.damage && formik.errors.damage}
+              />
+              <Button
+                className="btn-filter"
+                color="secondary"
+                variant="contained"
+                type="submit"
+              >
+                Filtrar
+              </Button>
+            </form>
+          </div>
         </div>
         <div className="agents">
           {/* {listAgents.map((agent: any) => (
