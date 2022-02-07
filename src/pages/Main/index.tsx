@@ -4,6 +4,7 @@ import { Container } from "./styles";
 import title from "../../assets/title.png";
 import Agents from "../../components/Agents";
 import Maps from "../../components/Maps";
+import Guns from "../../components/Guns";
 
 const Main: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Main: React.FC = () => {
       </div>
       <Agents />
       <Maps />
+      <Guns />
     </Container>
   );
 };
