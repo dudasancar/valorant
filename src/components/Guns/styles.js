@@ -8,12 +8,12 @@ export const Container = styled.div`
 
   &::before {
     content: "";
-    display: block;
+    // display: block;
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
-    width: 4000px;
+    height: 2400px;
+    width: 100vw;
     z-index: 1;
     background-image: url(${mapsBackground});
     background-repeat: no-repeat;
@@ -48,7 +48,7 @@ export const Content = styled.div`
   .MuiTabs-scroller {
     border: 1px solid #fff;
     img {
-      max-width: 325px;
+      min-width: 250px;
       height: 121px;
       padding: 60px;
     }
@@ -62,5 +62,16 @@ export const Content = styled.div`
 
   span {
     display: none;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+
+    h2 {
+      color: #fff;
+      margin: 30px 0 10px 40px;
+    }
   }
 `;
