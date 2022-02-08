@@ -5,6 +5,8 @@ import title from "../../assets/title.png";
 import Agents from "../../components/Agents";
 import Maps from "../../components/Maps";
 import Guns from "../../components/Guns";
+import Download from "../../components/Download";
+import Suporte from "../../components/Suporte";
 
 const Main: React.FC = () => {
   return (
@@ -16,6 +18,8 @@ const Main: React.FC = () => {
       <Agents />
       <Maps />
       <Guns />
+      <Download />
+      <Suporte />
     </Container>
   );
 };
