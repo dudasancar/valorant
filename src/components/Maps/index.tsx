@@ -1,6 +1,6 @@
 import { Divider, Tabs } from "@material-ui/core";
 import React from "react";
-import { Container, Content } from "./styles";
+import { Content } from "./styles";
 import map1 from "../../assets/map1.png";
 import map2 from "../../assets/map2.png";
 import map3 from "../../assets/map3.png";
@@ -14,26 +14,26 @@ const Maps: React.FC = () => {
     setValue(newValue);
   };
   return (
-    <Container>
-      <Content>
+    <Content>
+      <Divider />
+      <h1>Mapas</h1>
+      <Tabs
+        value={value}
+        onChange={() => handleChange}
+        variant="scrollable"
+        scrollButtons="auto"
+      >
+        <img src={map1} />
+        <img src={map2} />
+        <img src={map3} />
+        <img src={map4} />
+        <img src={map5} />
+      </Tabs>
+      <p>Ver mais</p>
+      <div className="divider">
         <Divider />
-        <h1>Mapas</h1>
-        <Tabs
-          value={value}
-          onChange={() => handleChange}
-          variant="scrollable"
-          scrollButtons="auto"
-        >
-          <img src={map1} />
-          <img src={map2} />
-          <img src={map3} />
-          <img src={map4} />
-          <img src={map5} />
-        </Tabs>
-        <p>Ver mais</p>
-        <Divider />
-      </Content>
-    </Container>
+      </div>
+    </Content>
   );
 };
 

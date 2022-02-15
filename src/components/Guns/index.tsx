@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Content } from "./styles";
+import { Content } from "./styles";
 import selectGun from "../../assets/select-gun.png";
 import { Box, Tabs } from "@material-ui/core";
 import gun6 from "../../assets/guns/gun6.png";
@@ -25,65 +25,63 @@ const Guns: React.FC = () => {
     setValue(newValue);
   };
   return (
-    <Container>
-      <Content>
-        <div className="title">
-          <h1>Escolha sua arma</h1>
-          <img src={selectGun} />
+    <Content>
+      <div className="title">
+        <h1>Escolha sua arma</h1>
+        <img src={selectGun} />
+      </div>
+      <div className="flex-container">
+        <div>
+          <h2>Arma primária</h2>
+          <Box style={{ maxWidth: 450, maxHeight: 300 }}>
+            <Tabs
+              value={value}
+              onChange={() => handleChange}
+              variant="scrollable"
+              scrollButtons="on"
+            >
+              <img src={gun6} />
+              <img src={gun8} />
+              <img src={gun11} />
+              <img src={gun12} />
+              <img src={gun7} />
+            </Tabs>
+          </Box>
+          <h2>Arma secundária</h2>
+          <Box style={{ maxWidth: 450, maxHeight: 300 }}>
+            <Tabs
+              value={value}
+              onChange={() => handleChange}
+              variant="scrollable"
+              scrollButtons="on"
+            >
+              <img src={gun14} />
+              <img src={gun15} />
+              <img src={gun13} />
+              <img src={gun9} />
+              <img src={gun10} />
+            </Tabs>
+          </Box>
+          <h2>Arma branca</h2>
+          <Box style={{ maxWidth: 450, maxHeight: 300 }}>
+            <Tabs
+              value={value}
+              onChange={() => handleChange}
+              variant="scrollable"
+              scrollButtons="on"
+            >
+              <img src={gun4} />
+              <img src={gun3} />
+              <img src={gun1} />
+              <img src={gun5} />
+            </Tabs>
+          </Box>
         </div>
-        <div className="flex-container">
-          <div>
-            <h2>Arma primária</h2>
-            <Box style={{ maxWidth: 450, maxHeight: 300 }}>
-              <Tabs
-                value={value}
-                onChange={() => handleChange}
-                variant="scrollable"
-                scrollButtons="on"
-              >
-                <img src={gun6} />
-                <img src={gun8} />
-                <img src={gun11} />
-                <img src={gun12} />
-                <img src={gun7} />
-              </Tabs>
-            </Box>
-            <h2>Arma secundária</h2>
-            <Box style={{ maxWidth: 450, maxHeight: 300 }}>
-              <Tabs
-                value={value}
-                onChange={() => handleChange}
-                variant="scrollable"
-                scrollButtons="on"
-              >
-                <img src={gun14} />
-                <img src={gun15} />
-                <img src={gun13} />
-                <img src={gun9} />
-                <img src={gun10} />
-              </Tabs>
-            </Box>
-            <h2>Arma branca</h2>
-            <Box style={{ maxWidth: 450, maxHeight: 300 }}>
-              <Tabs
-                value={value}
-                onChange={() => handleChange}
-                variant="scrollable"
-                scrollButtons="on"
-              >
-                <img src={gun4} />
-                <img src={gun3} />
-                <img src={gun1} />
-                <img src={gun5} />
-              </Tabs>
-            </Box>
-          </div>
-          <div>
-            <img src={agentGun} />
-          </div>
+        <div>
+          <img src={agentGun} />
         </div>
-      </Content>
-    </Container>
+      </div>
+    </Content>
   );
 };
 
