@@ -1,56 +1,34 @@
 import styled from "styled-components";
-import mapsBackground from "../../assets/background-maps.png";
-
-export const Container = styled.div`
-  position: relative;
-  background: #0d161f;
-  overflow: hidden;
-  padding: 40px;
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4000px;
-    z-index: 1;
-    background-image: url(${mapsBackground});
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
-  }
-`;
 
 export const Content = styled.div`
   position: relative;
   z-index: 2;
   display: flex;
   justify-content: center;
+  padding: 30px;
 
   .MuiPaper-root {
     width: 1158px;
-    height: 685px;
+    height: 680px;
 
     h1 {
       color: #04254c;
       text-transform: uppercase;
       font-style: italic;
       font-size: 40px;
-      margin-left: 70px;
+      margin-left: 50px;
+      padding-top: 30px;
     }
   }
 
   .table {
     display: grid;
     width: 100%;
+    padding: 30px;
 
-    // .MuiTextField-root,
-    // .MuiFormControl-root {
-    //   width: 350px;
-    //   margin-left: 20px;
-    // }
+    .MuiTextField-root {
+      margin: 5px;
+    }
 
     .name {
       grid-area: name;
@@ -86,13 +64,21 @@ export const Content = styled.div`
       grid-area: img;
     }
 
+    .btn {
+      grid-area: btn;
+      display: flex;
+      justify-content: flex-end;
+      margin: 30px 5px 0 0;
+    }
+
     grid-template-columns: repeat(3, 1fr);
 
     grid-template-areas:
       "name lastname img"
       "email nickname img"
       "subject subject img"
-      "description description img";
+      "description description img"
+      "null btn img";
 
     .img {
       width: 300px;
@@ -112,6 +98,15 @@ export const Content = styled.div`
         border: none;
         position: absolute;
       }
+    }
+  }
+
+  .btn {
+    button {
+      width: 143px;
+      height: 53px;
+      text-transform: capitalize;
+      font-size: 18px;
     }
   }
 `;
