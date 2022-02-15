@@ -20,6 +20,7 @@ export const Content = styled.div`
       color: #fff;
       text-transform: uppercase;
       margin: 15px;
+      cursor: pointer;
     }
   }
 
