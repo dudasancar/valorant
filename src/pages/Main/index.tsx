@@ -16,10 +16,12 @@ const Main: React.FC = () => {
         <img src={title} className="title" />
       </div>
       <Agents />
-      <Maps />
-      <Guns />
-      <Download />
-      <Suporte />
+      <div className="background">
+        <Maps />
+        <Guns />
+        <Download />
+        <Suporte />
+      </div>
     </Container>
   );
 };
