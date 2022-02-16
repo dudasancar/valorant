@@ -2,7 +2,7 @@ import { Modal } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { ContentModal } from "./styles";
-import jett from "../../assets/agents/jett-modal.png";
+import jett from "../../assets/jett-modal.png";
 import { getAgents } from "../../services/ListAgents";
 
 interface IProps {
@@ -50,6 +50,24 @@ const AgentsModal = ({ closeModal, open }: IProps): React.ReactElement => {
                   que os atingiu.
                 </p>
                 <h4>Habilidades</h4>
+                <div className="abilities">
+                  <div>
+                    <p>Arma branca</p>
+                    <p>5 Dano</p>
+                  </div>
+                  <div>
+                    <p>Arma primária</p>
+                    <p>8 Dano</p>
+                  </div>
+                  <div>
+                    <p>Arma secundária</p>
+                    <p>10 Dano</p>
+                  </div>
+                  <div>
+                    <p>Especial</p>
+                    <p>30 Dano</p>
+                  </div>
+                </div>
               </div>
               <div>
                 <img src={jett} />
