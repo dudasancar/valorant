@@ -2,7 +2,6 @@ import {
   Button,
   FormControl,
   FormHelperText,
-  Grid,
   InputLabel,
   MenuItem,
   Modal,
@@ -15,6 +14,8 @@ import { Buttons, ContentModal } from "./styles";
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./validation";
 import add from "../../assets/add.png";
+import { IconButton, Input } from "@mui/material";
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 
 interface IProps {
   closeModal: () => void;
@@ -91,8 +92,13 @@ const AddAgentModal = ({ closeModal, open }: IProps): React.ReactElement => {
                 }
               />
               <div className="add">
-                <img src={add} />
-                <p>Foto</p>
+                <label>
+                  <Input inputProps={{ accept: "image/*" }} type="file" />
+                  <IconButton color="secondary" component="span">
+                    <AddCircleOutlineOutlinedIcon />
+                  </IconButton>
+                  Foto
+                </label>
               </div>
               <TextField
                 fullWidth

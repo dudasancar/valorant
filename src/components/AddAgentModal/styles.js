@@ -101,25 +101,32 @@ export const ContentModal = styled.div`
       height: 360px;
       border: 1px solid #e13157;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       cursor: pointer;
       grid-area: add;
       margin-left: 30px;
 
-      img {
+      input {
+        display: none;
+      }
+
+      .MuiSvgIcon-root,
+      span {
         width: 25px;
         height: 25px;
         margin: 0;
-        margin-right: 50px;
         border: none;
+        color: #e13157;
+        margin-right: 40px;
+        padding-top: 10px;
         position: absolute;
       }
 
-      p {
+      label {
         color: #e13157;
         font-size: 24px;
-        margin-left: 40px;
+        margin-left: 15px;
         display: flex;
         justify-content: center;
       }
