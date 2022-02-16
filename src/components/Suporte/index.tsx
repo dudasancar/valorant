@@ -96,7 +96,7 @@ const Suporte: React.FC = () => {
               <img src={suporte} />
             </div>
             <div className="btn">
-              <Button color="secondary" variant="contained">
+              <Button color="secondary" variant="contained" type="submit">
                 Enviar
               </Button>
             </div>
