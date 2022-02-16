@@ -44,4 +44,25 @@ export const ContentModal = styled.div`
     color: #133052;
     letter-spacing: 0px;
   }
+
+  .abilities {
+    margin-top: 20px;
+    div {
+      display: flex;
+      justify-content: space-around;
+
+      p {
+        margin: 5px;
+        font-size: 24px;
+      }
+
+      p + p {
+        margin: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 `;
