@@ -13,7 +13,7 @@ import reyna from "../assets/agents/reyna.png";
 export const getAgents = async () => {
   const fakeData = [
     {
-      name: "Jett",
+      name: "jett",
       function: "Duelista",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -38,7 +38,7 @@ export const getAgents = async () => {
       image: jett,
     },
     {
-      name: "Raze",
+      name: "raze",
       function: "Sentinela",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -63,7 +63,7 @@ export const getAgents = async () => {
       image: raze,
     },
     {
-      name: "Breach",
+      name: "breach",
       function: "Duelista",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -88,7 +88,7 @@ export const getAgents = async () => {
       image: breach,
     },
     {
-      name: "Omen",
+      name: "omen",
       function: "Controlador",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -113,7 +113,7 @@ export const getAgents = async () => {
       image: omen,
     },
     {
-      name: "Brimstone",
+      name: "brimstone",
       function: "Iniciador",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -138,7 +138,7 @@ export const getAgents = async () => {
       image: brimstone,
     },
     {
-      name: "Phoenix",
+      name: "phoenix",
       function: "Duelista",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -163,7 +163,7 @@ export const getAgents = async () => {
       image: phoenix,
     },
     {
-      name: "Sage",
+      name: "sage",
       function: "Iniciador",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -188,7 +188,7 @@ export const getAgents = async () => {
       image: sage,
     },
     {
-      name: "Sova",
+      name: "sova",
       function: "Duelista",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -213,7 +213,7 @@ export const getAgents = async () => {
       image: sova,
     },
     {
-      name: "Viper",
+      name: "viper",
       function: "Duelista",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -238,7 +238,7 @@ export const getAgents = async () => {
       image: viper,
     },
     {
-      name: "Cypher",
+      name: "cypher",
       function: "Controlador",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
@@ -263,7 +263,7 @@ export const getAgents = async () => {
       image: cypher,
     },
     {
-      name: "Reyna",
+      name: "reyna",
       function: "Iniciador",
       description:
         "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",

@@ -8,7 +8,6 @@ import {
   Button,
   FormControl,
   FormHelperText,
-  Input,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -24,11 +23,13 @@ const Agents: React.FC = () => {
   const [openModalAgents, setOpenModalAgents] = useState<any | null>(null);
   const [openModalAddAgent, setOpenModalAddAgent] = useState<boolean>(false);
   const [listAgents, setListAgents] = useState([]);
+  const [filteredData, setFilteredData] = useState(listAgents);
 
   useEffect(() => {
     getAgents()
       .then((response: any) => {
         setListAgents(response);
+        setFilteredData(response);
         console.log(response);
       })
       .catch((error: any) => {
@@ -43,6 +44,16 @@ const Agents: React.FC = () => {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
+  const handleSearch = (event: any) => {
+    let value = event.target.value.toLowerCase();
+    let result = [];
+    console.log(value);
+    result = listAgents.filter((data: any) => {
+      return data.name.search(value) != -1;
+    });
+    setFilteredData(result);
+  };
 
   return (
     <Container>
@@ -69,6 +80,7 @@ const Agents: React.FC = () => {
                 </InputAdornment>
               ),
             }}
+            onChange={(event) => handleSearch(event)}
           />
         </FormControl>
         <div className="filter-box">
@@ -151,7 +163,7 @@ const Agents: React.FC = () => {
             <img src={add} />
             <p>Adicionar</p>
           </div>
-          {listAgents.map((agent: any) => (
+          {filteredData.map((agent: any) => (
             <div className="agent" onClick={() => setOpenModalAgents(agent)}>
               <img src={agent?.image} />
               <p>{agent?.name}</p>
