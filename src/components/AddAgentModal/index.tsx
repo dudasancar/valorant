@@ -8,12 +8,11 @@ import {
   Select,
   TextField,
 } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Buttons, ContentModal } from "./styles";
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./validation";
-import add from "../../assets/add.png";
 import { IconButton, Input } from "@mui/material";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 
@@ -23,6 +22,11 @@ interface IProps {
 }
 
 const AddAgentModal = ({ closeModal, open }: IProps): React.ReactElement => {
+  const [img, setImg] = useState({
+    preview: "",
+    raw: "",
+  });
+
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: validationSchema,
@@ -30,6 +34,15 @@ const AddAgentModal = ({ closeModal, open }: IProps): React.ReactElement => {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
+  function handleImage({ target }: any) {
+    setImg({
+      preview: URL.createObjectURL(target.files[0]),
+      raw: target.files[0],
+    });
+  }
+
+  console.log(img);
 
   return (
     <>
@@ -92,13 +105,31 @@ const AddAgentModal = ({ closeModal, open }: IProps): React.ReactElement => {
                 }
               />
               <div className="add">
-                <label>
-                  <Input inputProps={{ accept: "image/*" }} type="file" />
-                  <IconButton color="secondary" component="span">
-                    <AddCircleOutlineOutlinedIcon />
-                  </IconButton>
-                  Foto
-                </label>
+                <div>
+                  {img.preview ? (
+                    <div
+                      className="add"
+                      style={{
+                        backgroundImage: `url('${img.preview}')`,
+                        margin: "0",
+                      }}
+                    ></div>
+                  ) : (
+                    <label>
+                      <Input
+                        inputProps={{ accept: "image/*" }}
+                        type="file"
+                        onChange={handleImage}
+                        name="img"
+                        id="img"
+                      />
+                      <IconButton color="secondary" component="span">
+                        <AddCircleOutlineOutlinedIcon />
+                      </IconButton>
+                      Foto
+                    </label>
+                  )}
+                </div>
               </div>
               <TextField
                 fullWidth

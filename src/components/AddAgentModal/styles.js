@@ -1,4 +1,3 @@
-import { makeStyles } from "@material-ui/core";
 import styled from "styled-components";
 
 export const ContentModal = styled.div`
@@ -10,7 +9,6 @@ export const ContentModal = styled.div`
   width: 1150px;
   height: 700px;
   border: none;
-  border-radius: 5px;
   padding: 5px;
 
   .close-icon {
@@ -106,6 +104,8 @@ export const ContentModal = styled.div`
       cursor: pointer;
       grid-area: add;
       margin-left: 30px;
+      background-size: cover;
+      background-position: center center;
 
       input {
         display: none;
