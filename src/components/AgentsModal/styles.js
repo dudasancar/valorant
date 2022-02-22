@@ -9,7 +9,6 @@ export const ContentModal = styled.div`
   width: 1100px;
   height: 700px;
   border: none;
-  border-radius: 5px;
 
   .close-icon {
     display: flex;

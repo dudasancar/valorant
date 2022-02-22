@@ -2,11 +2,11 @@ import React from "react";
 import Header from "../../components/Header";
 import { Container } from "./styles";
 import title from "../../assets/title.png";
-import Agents from "../../components/Agents";
-import Maps from "../../components/Maps";
-import Guns from "../../components/Guns";
-import Download from "../../components/Download";
-import Suporte from "../../components/Suporte";
+import Agents from "./Agents";
+import Maps from "./Maps";
+import Guns from "./Guns";
+import Download from "./Download";
+import Suporte from "./Suporte";
 
 const Main: React.FC = () => {
   return (

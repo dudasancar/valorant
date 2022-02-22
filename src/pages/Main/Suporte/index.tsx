@@ -4,7 +4,7 @@ import { Paper } from "@mui/material";
 import { Button, TextField } from "@material-ui/core";
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./validation";
-import suporte from "../../assets/suporte.png";
+import suporte from "../../../assets/suporte.png";
 
 const Suporte: React.FC = () => {
   const formik = useFormik({

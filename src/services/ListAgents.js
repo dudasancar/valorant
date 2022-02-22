@@ -1,3 +1,15 @@
+import jett from "../assets/agents/jett.png";
+import raze from "../assets/agents/raze.png";
+import breach from "../assets/agents/breach.png";
+import omen from "../assets/agents/omen.png";
+import brimstone from "../assets/agents/brimstone.png";
+import phoenix from "../assets/agents/phoenix.png";
+import sage from "../assets/agents/sage.png";
+import sova from "../assets/agents/sova.png";
+import viper from "../assets/agents/viper.png";
+import cypher from "../assets/agents/cypher.png";
+import reyna from "../assets/agents/reyna.png";
+
 export const getAgents = async () => {
   const fakeData = [
     {
@@ -23,7 +35,7 @@ export const getAgents = async () => {
           damage: 30,
         },
       ],
-      image: "../assets/jett.png",
+      image: jett,
     },
     {
       name: "Raze",
@@ -48,7 +60,7 @@ export const getAgents = async () => {
           damage: 25,
         },
       ],
-      image: "../assets/raze.png",
+      image: raze,
     },
     {
       name: "Breach",
@@ -73,7 +85,7 @@ export const getAgents = async () => {
           damage: 10,
         },
       ],
-      image: "../assets/breach.png",
+      image: breach,
     },
     {
       name: "Omen",
@@ -98,7 +110,7 @@ export const getAgents = async () => {
           damage: 20,
         },
       ],
-      image: "../assets/omen.png",
+      image: omen,
     },
     {
       name: "Brimstone",
@@ -123,7 +135,7 @@ export const getAgents = async () => {
           damage: 20,
         },
       ],
-      image: "../assets/brimstone.png",
+      image: brimstone,
     },
     {
       name: "Phoenix",
@@ -148,7 +160,7 @@ export const getAgents = async () => {
           damage: 30,
         },
       ],
-      image: "../assets/phoenix.png",
+      image: phoenix,
     },
     {
       name: "Sage",
@@ -173,7 +185,7 @@ export const getAgents = async () => {
           damage: 25,
         },
       ],
-      image: "../assets/sage.png",
+      image: sage,
     },
     {
       name: "Sova",
@@ -198,7 +210,7 @@ export const getAgents = async () => {
           damage: 40,
         },
       ],
-      image: "../assets/sage.png",
+      image: sova,
     },
     {
       name: "Viper",
@@ -223,7 +235,7 @@ export const getAgents = async () => {
           damage: 15,
         },
       ],
-      image: "../assets/viper.png",
+      image: viper,
     },
     {
       name: "Cypher",
@@ -248,7 +260,7 @@ export const getAgents = async () => {
           damage: 20,
         },
       ],
-      image: "../assets/cypher.png",
+      image: cypher,
     },
     {
       name: "Reyna",
@@ -273,7 +285,7 @@ export const getAgents = async () => {
           damage: 45,
         },
       ],
-      image: "../assets/reyna.png",
+      image: reyna,
     },
   ];
   try {

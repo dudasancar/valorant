@@ -1,10 +1,10 @@
 import React from "react";
 import { Content } from "./styles";
-import download from "../../assets/download.png";
+import download from "../../../assets/download.png";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
-import DownloadIcon from "../../assets/download-button.png";
+import DownloadIcon from "../../../assets/download-button.png";
 import { Button } from "@material-ui/core";
 
 const Download: React.FC = () => {

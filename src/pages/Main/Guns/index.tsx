@@ -1,22 +1,22 @@
 import React from "react";
 import { Content } from "./styles";
-import selectGun from "../../assets/select-gun.png";
+import selectGun from "../../../assets/select-gun.png";
 import { Box, Tabs } from "@material-ui/core";
-import gun6 from "../../assets/guns/gun6.png";
-import gun8 from "../../assets/guns/gun8.png";
-import gun11 from "../../assets/guns/gun11.png";
-import gun12 from "../../assets/guns/gun12.png";
-import gun7 from "../../assets/guns/gun7.png";
-import gun14 from "../../assets/guns/gun14.png";
-import gun15 from "../../assets/guns/gun15.png";
-import gun13 from "../../assets/guns/gun13.png";
-import gun9 from "../../assets/guns/gun9.png";
-import gun10 from "../../assets/guns/gun10.png";
-import gun4 from "../../assets/guns/gun4.png";
-import gun3 from "../../assets/guns/gun3.png";
-import gun1 from "../../assets/guns/gun1.png";
-import gun5 from "../../assets/guns/gun5.png";
-import agentGun from "../../assets/agent-gun.png";
+import gun6 from "../../../assets/guns/gun6.png";
+import gun8 from "../../../assets/guns/gun8.png";
+import gun11 from "../../../assets/guns/gun11.png";
+import gun12 from "../../../assets/guns/gun12.png";
+import gun7 from "../../../assets/guns/gun7.png";
+import gun14 from "../../../assets/guns/gun14.png";
+import gun15 from "../../../assets/guns/gun15.png";
+import gun13 from "../../../assets/guns/gun13.png";
+import gun9 from "../../../assets/guns/gun9.png";
+import gun10 from "../../../assets/guns/gun10.png";
+import gun4 from "../../../assets/guns/gun4.png";
+import gun3 from "../../../assets/guns/gun3.png";
+import gun1 from "../../../assets/guns/gun1.png";
+import gun5 from "../../../assets/guns/gun5.png";
+import agentGun from "../../../assets/agent-gun.png";
 
 const Guns: React.FC = () => {
   const [value, setValue] = React.useState(0);

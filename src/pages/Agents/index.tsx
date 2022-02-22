@@ -1,17 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HeaderAgents from "../../components/HeaderAgents";
 import { Container, Content } from "./styles";
-import jett from "../../assets/agents/jett.png";
-import raze from "../../assets/agents/raze.png";
-import breach from "../../assets/agents/breach.png";
-import omen from "../../assets/agents/omen.png";
-import brimstone from "../../assets/agents/brimstone.png";
-import phoenix from "../../assets/agents/phoenix.png";
-import sage from "../../assets/agents/sage.png";
-import sova from "../../assets/agents/sova.png";
-import viper from "../../assets/agents/viper.png";
-import cypher from "../../assets/agents/cypher.png";
-import reyna from "../../assets/agents/reyna.png";
 import add from "../../assets/add.png";
 import AddAgentModal from "../../components/AddAgentModal";
 import AgentsModal from "../../components/AgentsModal";
@@ -29,10 +18,23 @@ import {
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./validation";
 import SearchIcon from "@mui/icons-material/Search";
+import { getAgents } from "../../services/ListAgents";
 
 const Agents: React.FC = () => {
-  const [openModalAgents, setOpenModalAgents] = useState<boolean>(false);
+  const [openModalAgents, setOpenModalAgents] = useState<any | null>(null);
   const [openModalAddAgent, setOpenModalAddAgent] = useState<boolean>(false);
+  const [listAgents, setListAgents] = useState([]);
+
+  useEffect(() => {
+    getAgents()
+      .then((response: any) => {
+        setListAgents(response);
+        console.log(response);
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
+  }, []);
 
   const formik = useFormik({
     initialValues: initialValues,
@@ -49,8 +51,9 @@ const Agents: React.FC = () => {
         open={openModalAddAgent}
       />
       <AgentsModal
-        closeModal={() => setOpenModalAgents(false)}
-        open={openModalAgents}
+        closeModal={() => setOpenModalAgents(null)}
+        open={Boolean(openModalAgents)}
+        agent={openModalAgents}
       />
       <HeaderAgents />
       <Content>
@@ -144,58 +147,16 @@ const Agents: React.FC = () => {
           </div>
         </div>
         <div className="agents">
-          {/* {listAgents.map((agent: any) => (
-            <> */}
           <div className="add" onClick={() => setOpenModalAddAgent(true)}>
             <img src={add} />
             <p>Adicionar</p>
           </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={jett} />
-            <p>Jett</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={raze} />
-            <p>Raze</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={breach} />
-            <p>Breach</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={omen} />
-            <p>Omen</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={brimstone} />
-            <p>Brimstone</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={phoenix} />
-            <p>Phoenix</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={sage} />
-            <p>Sage</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={sova} />
-            <p>Sova</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={viper} />
-            <p>Viper</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={cypher} />
-            <p>Cypher</p>
-          </div>
-          <div className="agent" onClick={() => setOpenModalAgents(true)}>
-            <img src={reyna} />
-            <p>Reyna</p>
-          </div>
-          {/* </>
-          ))} */}
+          {listAgents.map((agent: any) => (
+            <div className="agent" onClick={() => setOpenModalAgents(agent)}>
+              <img src={agent?.image} />
+              <p>{agent?.name}</p>
+            </div>
+          ))}
         </div>
       </Content>
     </Container>

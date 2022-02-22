@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import imageAgents from "../../assets/image-agents.png";
+import imageAgents from "../../../assets/image-agents.png";
 
 export const Container = styled.div`
   position: relative;
