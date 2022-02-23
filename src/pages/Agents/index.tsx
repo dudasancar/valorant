@@ -23,13 +23,13 @@ const Agents: React.FC = () => {
   const [openModalAgents, setOpenModalAgents] = useState<any | null>(null);
   const [openModalAddAgent, setOpenModalAddAgent] = useState<boolean>(false);
   const [listAgents, setListAgents] = useState([]);
-  const [filteredData, setFilteredData] = useState(listAgents);
+  const [searchAgent, setsearchAgent] = useState(listAgents);
 
   useEffect(() => {
     getAgents()
       .then((response: any) => {
         setListAgents(response);
-        setFilteredData(response);
+        setsearchAgent(response);
         console.log(response);
       })
       .catch((error: any) => {
@@ -52,7 +52,7 @@ const Agents: React.FC = () => {
     result = listAgents.filter((data: any) => {
       return data.name.search(value) != -1;
     });
-    setFilteredData(result);
+    setsearchAgent(result);
   };
 
   return (
@@ -126,10 +126,8 @@ const Agents: React.FC = () => {
                   value={formik.values.filter}
                   onChange={formik.handleChange}
                 >
-                  <MenuItem>Arma branca</MenuItem>
-                  <MenuItem>Arma primária</MenuItem>
-                  <MenuItem>Arma secundária</MenuItem>
-                  <MenuItem>Especial</MenuItem>
+                  <MenuItem>Maior ao menor</MenuItem>
+                  <MenuItem>Menor ao maior</MenuItem>
                 </Select>
                 <FormHelperText>
                   {formik.touched.filter && formik.errors.filter}
@@ -163,7 +161,7 @@ const Agents: React.FC = () => {
             <img src={add} />
             <p>Adicionar</p>
           </div>
-          {filteredData.map((agent: any) => (
+          {searchAgent.map((agent: any) => (
             <div className="agent" onClick={() => setOpenModalAgents(agent)}>
               <img src={agent?.image} />
               <p>{agent?.name}</p>
