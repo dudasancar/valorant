@@ -1,9 +1,8 @@
 import { Modal } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { ContentModal } from "./styles";
 import jett from "../../assets/jett-modal.png";
-import { getAgents } from "../../services/ListAgents";
 
 interface IProps {
   closeModal: () => void;
