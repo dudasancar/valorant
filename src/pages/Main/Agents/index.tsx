@@ -29,7 +29,7 @@ const Agents: React.FC = () => {
       <AgentsModal
         closeModal={() => setOpenModalAgents(null)}
         open={Boolean(openModalAgents)}
-        agent={openModalAgents}
+        agents={openModalAgents}
       />
       <Content>
         <h1>Agentes</h1>

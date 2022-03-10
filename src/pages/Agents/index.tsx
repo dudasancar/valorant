@@ -20,16 +20,15 @@ import SearchIcon from "@mui/icons-material/Search";
 import { getAgents } from "../../services/ListAgents";
 
 const Agents: React.FC = () => {
-  const [openModalAgents, setOpenModalAgents] = useState<any | null>(null);
+  const [modalData, setModalData] = useState<any | null>(null);
   const [openModalAddAgent, setOpenModalAddAgent] = useState<boolean>(false);
   const [listAgents, setListAgents] = useState([]);
-  const [searchAgent, setsearchAgent] = useState(listAgents);
 
   useEffect(() => {
     getAgents()
       .then((response: any) => {
         setListAgents(response);
-        setsearchAgent(response);
+        // setsearchAgent(response);
         console.log(response);
       })
       .catch((error: any) => {
@@ -40,19 +39,24 @@ const Agents: React.FC = () => {
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: (values, event) => {
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 
   const handleSearch = (event: any) => {
-    let value = event.target.value.toLowerCase();
+    let value = event.target.value;
     let result = [];
     console.log(value);
     result = listAgents.filter((data: any) => {
       return data.name.search(value) != -1;
     });
-    setsearchAgent(result);
+    // setsearchAgent(result);
+  };
+
+  const onFinish = (agent: any) => {
+    setListAgents(agent);
+    setOpenModalAddAgent(false);
   };
 
   return (
@@ -60,11 +64,13 @@ const Agents: React.FC = () => {
       <AddAgentModal
         closeModal={() => setOpenModalAddAgent(false)}
         open={openModalAddAgent}
+        agents={listAgents}
+        addNewAgent={onFinish}
       />
       <AgentsModal
-        closeModal={() => setOpenModalAgents(null)}
-        open={Boolean(openModalAgents)}
-        agent={openModalAgents}
+        closeModal={() => setModalData(null)}
+        open={Boolean(modalData)}
+        agents={modalData}
       />
       <HeaderAgents />
       <Content>
@@ -102,10 +108,10 @@ const Agents: React.FC = () => {
                   value={formik.values.skills}
                   onChange={formik.handleChange}
                 >
-                  <MenuItem>Arma branca</MenuItem>
-                  <MenuItem>Arma primária</MenuItem>
-                  <MenuItem>Arma secundária</MenuItem>
-                  <MenuItem>Especial</MenuItem>
+                  <MenuItem value="whiteGun">Arma branca</MenuItem>
+                  <MenuItem value="firstGun">Arma primária</MenuItem>
+                  <MenuItem value="secondGun">Arma secundária</MenuItem>
+                  <MenuItem value="especial">Especial</MenuItem>
                 </Select>
                 <FormHelperText>
                   {formik.touched.skills && formik.errors.skills}
@@ -126,8 +132,8 @@ const Agents: React.FC = () => {
                   value={formik.values.filter}
                   onChange={formik.handleChange}
                 >
-                  <MenuItem>Maior ao menor</MenuItem>
-                  <MenuItem>Menor ao maior</MenuItem>
+                  <MenuItem value="biggest">Maior ao menor</MenuItem>
+                  <MenuItem value="smaller">Menor ao maior</MenuItem>
                 </Select>
                 <FormHelperText>
                   {formik.touched.filter && formik.errors.filter}
@@ -161,8 +167,8 @@ const Agents: React.FC = () => {
             <img src={add} />
             <p>Adicionar</p>
           </div>
-          {searchAgent.map((agent: any) => (
-            <div className="agent" onClick={() => setOpenModalAgents(agent)}>
+          {listAgents.map((agent: any) => (
+            <div className="agent" onClick={() => setModalData(agent)}>
               <img src={agent?.image} />
               <p>{agent?.name}</p>
             </div>

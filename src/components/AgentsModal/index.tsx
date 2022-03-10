@@ -7,13 +7,13 @@ import jett from "../../assets/jett-modal.png";
 interface IProps {
   closeModal: () => void;
   open: boolean;
-  agent: any | null;
+  agents: any | null;
 }
 
 const AgentsModal = ({
   closeModal,
   open,
-  agent,
+  agents,
 }: IProps): React.ReactElement => {
   return (
     <>
@@ -32,25 +32,25 @@ const AgentsModal = ({
           <div className="text">
             <div>
               <h4>Função</h4>
-              <h1>{agent?.function}</h1>
-              <p>{agent?.description}</p>
+              <h1>{agents?.function}</h1>
+              <p>{agents?.description}</p>
               <h4>Habilidades</h4>
               <div className="abilities">
                 <div>
                   <p>Arma branca</p>
-                  <p>{agent?.skills[0].damage} Dano</p>
+                  <p>{agents?.skills[0].damage} Dano</p>
                 </div>
                 <div>
                   <p>Arma primária</p>
-                  <p>{agent?.skills[1].damage} Dano</p>
+                  <p>{agents?.skills[1].damage} Dano</p>
                 </div>
                 <div>
                   <p>Arma secundária</p>
-                  <p>{agent?.skills[2].damage} Dano</p>
+                  <p>{agents?.skills[2].damage} Dano</p>
                 </div>
                 <div>
                   <p>Especial</p>
-                  <p>{agent?.skills[3].damage} Dano</p>
+                  <p>{agents?.skills[3].damage} Dano</p>
                 </div>
               </div>
             </div>
