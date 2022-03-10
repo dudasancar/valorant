@@ -31,104 +31,62 @@ export const ContentModal = styled.div`
     letter-spacing: 0px;
   }
 
-  .table {
-    display: grid;
-    width: 100%;
+  form {
+    .table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      justify-content: space-around;
 
-    .MuiTextField-root,
-    .MuiFormControl-root {
-      width: 350px;
-      margin-left: 20px;
-    }
-
-    .function {
-      grid-area: function;
-    }
-
-    .field2 {
-      grid-area: field2;
-    }
-
-    .field3 {
-      grid-area: field3;
-    }
-
-    .field4 {
-      grid-area: field4;
-    }
-
-    .field5 {
-      grid-area: field5;
-    }
-
-    .field6 {
-      grid-area: field6;
-    }
-
-    .field7 {
-      grid-area: field7;
-    }
-
-    .field8 {
-      grid-area: field8;
-    }
-
-    .field9 {
-      grid-area: field9;
-    }
-
-    .field10 {
-      grid-area: field10;
-    }
-
-    .add {
-      grid-area: add;
-    }
-
-    grid-template-columns: repeat(3, 1fr);
-
-    grid-template-areas:
-      "function field2 add"
-      "field3 field4 add"
-      "field5 field6 add"
-      "field7 field8 add"
-      "field9 field10 add";
-
-    .add {
-      width: 300px;
-      height: 360px;
-      border: 1px solid #e13157;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      grid-area: add;
-      margin-left: 30px;
-      background-size: cover;
-      background-position: center center;
-
-      input {
-        display: none;
+      .MuiTextField-root,
+      .MuiFormControl-root {
+        width: 350px;
+        margin: 0 0 5px 20px;
       }
 
-      .MuiSvgIcon-root,
-      span {
-        width: 25px;
-        height: 25px;
-        margin: 0;
-        border: none;
-        color: #e13157;
-        margin-right: 40px;
-        padding-top: 10px;
-        position: absolute;
+      .MuiGrid-spacing-xs-2 {
+        width: calc(100% + 170px);
       }
 
-      label {
-        color: #e13157;
-        font-size: 24px;
-        margin-left: 15px;
-        display: flex;
-        justify-content: center;
+      div + div {
+        width: calc(100% - 350px);
+        .add {
+          width: 300px;
+          height: 360px;
+          border: 1px solid #e13157;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          grid-area: add;
+          margin-left: 30px;
+          background-size: cover;
+          background-position: center center;
+
+          input {
+            display: none;
+          }
+
+          .MuiSvgIcon-root,
+          span {
+            width: 25px;
+            height: 25px;
+            margin: 0;
+            border: none;
+            color: #e13157;
+            margin-right: 40px;
+            padding-top: 10px;
+            position: absolute;
+          }
+
+          label {
+            color: #e13157;
+            font-size: 24px;
+            margin-left: 15px;
+            display: flex;
+            justify-content: center;
+          }
+        }
       }
     }
   }
@@ -137,6 +95,7 @@ export const ContentModal = styled.div`
 export const Buttons = styled.div`
   display: flex;
   justify-content: flex-end;
+  margin-right: 25px;
   button {
     min-width: 140px;
     height: 50px;

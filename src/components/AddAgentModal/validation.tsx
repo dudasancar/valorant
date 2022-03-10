@@ -1,27 +1,39 @@
 import * as Yup from "yup";
 
 export const validationSchema = Yup.object({
+  image: Yup.string(),
   function: Yup.string(),
   description: Yup.string(),
-  skill1: Yup.string(),
-  skill2: Yup.string(),
-  skill3: Yup.string(),
-  skill4: Yup.string(),
-  damage1: Yup.string(),
-  damage2: Yup.string(),
-  damage3: Yup.string(),
-  damage4: Yup.string(),
+  name: Yup.string(),
+  skills: Yup.array().of(
+    Yup.object().shape({
+      type: Yup.number(),
+      damage: Yup.number(),
+    })
+  ),
 });
 
 export const initialValues = {
+  image: "",
   function: "",
   description: "",
-  skill1: "",
-  skill2: "",
-  skill3: "",
-  skill4: "",
-  damage1: "",
-  damage2: "",
-  damage3: "",
-  damage4: "",
+  name: "",
+  skills: [
+    {
+      type: 1,
+      damage: "",
+    },
+    {
+      type: 2,
+      damage: "",
+    },
+    {
+      type: 3,
+      damage: "",
+    },
+    {
+      type: 4,
+      damage: "",
+    },
+  ],
 };
